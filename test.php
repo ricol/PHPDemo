@@ -1,5 +1,5 @@
 <?php
-
+    require('header.php');
     require('common.php');
 
     print "<h3 align='center'>Welcome To PHP World!</h3>";
@@ -281,5 +281,7 @@
     $aPerson->$name = "ricol";
     $aPerson->$age = 32;
     $aPerson->show();
+    
+    require('footer.php');
 ?>
 
