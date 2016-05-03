@@ -25,12 +25,11 @@ and open the template in the editor.
             showRef('logout.php');
             showRef('curl.php');
             showRef('xml.php');
-        ?>
-
-        <?php
-            $xml = file_get_contents('http://weather.yahooapis.com/forecastrss?p=USNY0996');
-            $data = simplexml_load_string($xml);
-            echo $data;
+            showRef('auth.php');
+            showRef('basicAuth.php');
+            showRef('digestAuth.php');
+            showRef('response.php');
+            showRef('APNS.php');
         ?>
     </body>
 </html>
