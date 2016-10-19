@@ -1,4 +1,5 @@
 <?php
-    $HTML = "<hr />";
-    echo($HTML);
+
+$HTML = "<hr />";
+echo($HTML);
 ?>
