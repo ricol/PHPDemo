@@ -12,24 +12,26 @@ and open the template in the editor.
     <body>
         <?php
 
-            function showRef($page)
-            {
-                echo("<a href='$page'>$page</a><br />");
-            }
+        function showRef($page)
+        {
+            echo("<a href='$page'>$page</a><br />");
+        }
 
-            echo("<h3>Welcome!</h3>");
+        echo("<h3>Welcome!</h3>");
 
-            showRef('form.php');
-            showRef('test.php');
-            showRef('login.php');
-            showRef('logout.php');
-            showRef('curl.php');
-            showRef('xml.php');
-            showRef('auth.php');
-            showRef('basicAuth.php');
-            showRef('digestAuth.php');
-            showRef('response.php');
-            showRef('APNS.php');
+        showRef('form.php');
+        showRef('test.php');
+        showRef('login.php');
+        showRef('logout.php');
+        showRef('curl.php');
+        showRef('xml.php');
+        showRef('auth.php');
+        showRef('basicAuth.php');
+        showRef('digestAuth.php');
+        showRef('response.php');
+        showRef('APNS.php');
+        showRef('namespace.php');
+        showRef('datastructure.php');
         ?>
     </body>
 </html>

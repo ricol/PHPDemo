@@ -10,7 +10,7 @@ if (empty($_SERVER['PHP_AUTH_DIGEST']))
 {
     header('HTTP/1.1 401 Unauthorized');
     header('WWW-Authenticate: Digest realm="' . $realm .
-            '",qop="auth",nonce="' . uniqid() . '",opaque="' . md5($realm) . '"');
+        '",qop="auth",nonce="' . uniqid() . '",opaque="' . md5($realm) . '"');
 
     die('Text to send if user hits Cancel button');
 }
@@ -18,7 +18,7 @@ if (empty($_SERVER['PHP_AUTH_DIGEST']))
 
 // analyze the PHP_AUTH_DIGEST variable
 if (!($data = http_digest_parse($_SERVER['PHP_AUTH_DIGEST'])) ||
-        !isset($users[$data['username']]))
+    !isset($users[$data['username']]))
     die('Wrong Credentials!');
 
 
@@ -51,5 +51,3 @@ function http_digest_parse($txt)
 
     return $needed_parts ? false : $data;
 }
-
-?>

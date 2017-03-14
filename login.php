@@ -1,6 +1,6 @@
 <?php
-    ob_start();
-    session_start();
+ob_start();
+session_start();
 ?>
 
 <?
@@ -79,23 +79,23 @@
         <div class="container form-signin">
 
             <?php
-                $msg = '';
+            $msg = '';
 
-                if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))
+            if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))
+            {
+
+                if ($_POST['username'] == 'tutorialspoint' && $_POST['password'] == '1234')
                 {
+                    $_SESSION['valid'] = true;
+                    $_SESSION['timeout'] = time();
+                    $_SESSION['username'] = 'tutorialspoint';
 
-                    if ($_POST['username'] == 'tutorialspoint' && $_POST['password'] == '1234')
-                    {
-                        $_SESSION['valid'] = true;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['username'] = 'tutorialspoint';
-
-                        echo 'You have entered valid use name and password';
-                    } else
-                    {
-                        $msg = 'Wrong username or password';
-                    }
+                    echo 'You have entered valid use name and password';
+                } else
+                {
+                    $msg = 'Wrong username or password';
                 }
+            }
             ?>
         </div> <!-- /container -->
 
