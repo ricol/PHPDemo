@@ -1,6 +1,6 @@
 <?php
 
-include "./namespace/namespace_demo.php";
+include "namespace/namespace_demo.php";
 
 new my\Person();
 

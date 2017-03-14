@@ -9,7 +9,7 @@ function authenticate()
 }
 
 if (!isset($_SERVER['PHP_AUTH_USER']) ||
-        ($_POST['SeenBefore'] == 1 && $_POST['OldAuth'] == $_SERVER['PHP_AUTH_USER']))
+    ($_POST['SeenBefore'] == 1 && $_POST['OldAuth'] == $_SERVER['PHP_AUTH_USER']))
 {
     authenticate();
 } else
@@ -22,4 +22,3 @@ if (!isset($_SERVER['PHP_AUTH_USER']) ||
     echo "<input type='submit' value='Re Authenticate' />\n";
     echo "</form></p>\n";
 }
-?>

@@ -6,7 +6,7 @@
 
     <body>
         <?php
-        require('header.php');
+        require('common/header.php');
         // define variables and set to empty values
         $name = $email = $gender = $comment = $website = "";
 
@@ -86,7 +86,7 @@
         ?>
 
         <?php
-        require('footer.php');
+        require('common/footer.php');
         ?>
     </body>
 </html>

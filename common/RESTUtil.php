@@ -14,5 +14,3 @@ function curl_get($url)
     curl_close($client);
     return $response;
 }
-
-?>

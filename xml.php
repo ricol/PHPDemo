@@ -41,4 +41,3 @@ $doc->loadXML($data2);
 $books = $doc->getElementsByTagName('book');
 echo "Book title : " . $books->item(0)->childNodes->item(0)->nodeValue . "\n";
 echo "Book type : " . $books->item(0)->getAttribute('type') . "\n";
-?>

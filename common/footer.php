@@ -2,4 +2,3 @@
 
 $HTML = "<hr />";
 echo($HTML);
-?>

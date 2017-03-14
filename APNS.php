@@ -4,7 +4,7 @@
 
 <body>
     <?php
-    require('header.php');
+    require('common/header.php');
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -71,7 +71,7 @@
         stream_context_set_option($ctx, 'ssl', 'local_cert', $PEM);
         stream_context_set_option($ctx, 'ssl', 'passphrase', $PASSPHRASE);
         $fp = stream_socket_client(
-                'ssl://gateway.sandbox.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT | STREAM_CLIENT_PERSISTENT, $ctx);
+            'ssl://gateway.sandbox.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT | STREAM_CLIENT_PERSISTENT, $ctx);
         if ($fp)
         {
             $body['aps'] = array(
@@ -83,15 +83,17 @@
             $result = fwrite($fp, $msg, strlen($msg));
             fclose($fp);
 
-            if (!$result) show('Message not delivered' . PHP_EOL);
-            else show("Message: $message delived to: $deviceToken");
+            if (!$result)
+                show('Message not delivered' . PHP_EOL);
+            else
+                show("Message: $message delived to: $deviceToken");
         }else
         {
             show("Failed to connect: $err $errstr" . PHP_EOL);
         }
     }
 
-    require('footer.php');
+    require('common/footer.php');
     ?>
 </body>
 </html>

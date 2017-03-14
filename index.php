@@ -31,6 +31,7 @@ and open the template in the editor.
         showRef('response.php');
         showRef('APNS.php');
         showRef('namespace.php');
+        showRef('datastructure.php');
         ?>
     </body>
 </html>
