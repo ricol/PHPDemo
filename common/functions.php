@@ -71,12 +71,9 @@ function isAnagrams($str1, $str2)
     $len2 = strlen($str2);
     $data = array();
 
-    if ($len1 == 0 && $len2 == 0)
-        return false;
-    if ($len1 == 0 || $len2 == 0)
-        return false;
-    if ($len1 != $len2)
-        return false;
+    if ($len1 == 0 && $len2 == 0) return false;
+    if ($len1 == 0 || $len2 == 0) return false;
+    if ($len1 != $len2) return false;
 
     for ($i = 0; $i < $len1; $i++)
     {
@@ -92,8 +89,7 @@ function isAnagrams($str1, $str2)
             }
         }
 
-        if (!$bFound)
-            return false;
+        if (!$bFound) return false;
     }
 
     return true;
@@ -106,10 +102,62 @@ function get_number_of_binary_1_from($num)
 
     do
     {
-        if ($n & 1 == 1)
-            $result++;
+        if ($n & 1 == 1) $result++;
         $n >>= 1;
     }while ($n != 0);
 
     return $result;
+}
+
+function find_majority($data)
+{
+    if (empty($data)) return null;
+
+    $dict = [];
+
+    foreach ($data as $value)
+    {
+        if (isset($dict[$value])) $dict[$value] ++;
+        else $dict[$value] = 1;
+    }
+
+    $max = array_keys($dict)[0];
+    foreach ($dict as $key => $value)
+    {
+        echo "dict[" . $key . "] = " . $value . "<br />";
+        if ($value > $max) $max = $key;
+    }
+
+    return $max;
+}
+
+function find_i_j($data, $value)
+{
+    $result = false;
+    
+    for ($i = count($data) - 1; $i >= 0; $i--)
+    {
+        for ($j = $i - 1; $j >= 0; $j--)
+        {
+            if ($data[$i] - $data[$j] == $value)
+            {
+                $result = true;
+                break;
+            }
+        }
+        
+        if ($result) break;
+    }
+    
+    if ($result)
+    {
+        echo "Result: data[" . $i . "] - data[" . $j . "] = $value <br />";
+    }
+    
+    return $result ? "YES" : "NO";
+}
+
+function beginTest($num)
+{
+    echo "<hr /> <h4>Test " . $num . "...</h3>";
 }
