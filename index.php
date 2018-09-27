@@ -11,27 +11,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-
-        function showRef($page)
-        {
-            echo("<a href='$page'>$page</a><br />");
-        }
-
         echo("<h3>Welcome!</h3>");
 
-        showRef('form.php');
-        showRef('test.php');
-        showRef('login.php');
-        showRef('logout.php');
-        showRef('curl.php');
-        showRef('xml.php');
-        showRef('auth.php');
-        showRef('basicAuth.php');
-        showRef('digestAuth.php');
-        showRef('response.php');
-        showRef('APNS.php');
-        showRef('namespace.php');
-        showRef('datastructure.php');
+        foreach (['form.php', 'test.php', 'login.php', 'logout.php', 'curl.php', 'xml.php', 'auth.php', 'basicAuth.php',
+        'digestAuth.php', 'APNS.php', 'namespace.php', 'datastructure.php', 'oop.php', 'syntax.php'] as $file)
+            echo("<a href='$file'>$file</a><br />");
         ?>
     </body>
 </html>

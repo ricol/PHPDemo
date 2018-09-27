@@ -83,10 +83,8 @@
             $result = fwrite($fp, $msg, strlen($msg));
             fclose($fp);
 
-            if (!$result)
-                show('Message not delivered' . PHP_EOL);
-            else
-                show("Message: $message delived to: $deviceToken");
+            if (!$result) show('Message not delivered' . PHP_EOL);
+            else show("Message: $message delived to: $deviceToken");
         }else
         {
             show("Failed to connect: $err $errstr" . PHP_EOL);
