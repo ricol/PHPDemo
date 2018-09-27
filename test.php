@@ -1,5 +1,7 @@
 <?php
 
+require_once('common/header.php');
+
 require_once 'common/functions.php';
 
 /*
@@ -10,16 +12,20 @@ require_once 'common/functions.php';
 
  */
 
+$test = 0;
+
+beginTest( ++$test);
+
 $str1 = "";
 $str2 = "";
 
-echo "Test1..." . "<br />";
 echo isAnagrams($str1, $str2) ? "true" : "false";
 echo "<br />";
 echo "<br />";
 
 
-echo "Test2..." . "<br />";
+beginTest( ++$test);
+
 $data = [1, 4, 5, 7, 8, 9];
 $difference = 3;
 
@@ -28,7 +34,7 @@ echo analyse($data, $difference);
 echo "<br />";
 echo "<br />";
 
-echo "Test3..." . "<br />";
+beginTest( ++$test);
 $data = [1, 2, 3, 4, 5, 6, 7, 8];
 
 for ($i = 0; $i <= 10; $i++)
@@ -40,9 +46,8 @@ for ($i = 0; $i <= 10; $i++)
     echo "<br />";
 }
 
-echo "<br />";
-echo "Test4..." . "<br />";
-for ($value = 2; $value <= 10; $value += 0.1)
+beginTest( ++$test);
+for ($value = 2; $value <= 10; $value += 1)
 {
     $r = sqrtnew($value, 0.0000000000001);
     $real = sqrt($value);
@@ -50,14 +55,14 @@ for ($value = 2; $value <= 10; $value += 0.1)
     echo "Square root of " . $value . " is: " . $r . " [Sqrt($value) = " . $real . "] [Difference: $difference] " . "<br />";
 }
 
-echo "Test5..." . "<br />";
+beginTest( ++$test);
 for ($i = 2; $i <= 10; $i++)
 {
     $number = get_number_of_binary_1_from($i);
     printf("Number of 1 in %b[%d] is: %d<br />", $i, $i, $number);
 }
 
-echo "Test6..." . "<br />";
+beginTest( ++$test);
 
 $data = [2, 3, 4, 5, 6];
 $s = 0;
@@ -67,4 +72,30 @@ foreach ($data as $value)
     $s ^= $value;
     printf("%05b[%d] ^= %05b[%d] => %05b[%d]<br />", $old, $old, $value, $value, $s, $s);
     $old = $s;
+}
+
+beginTest( ++$test);
+
+$data = [2, 3, 5, 2, 3, 4, 6, 8, 2, 3, 3, 3, 4, 5, 6];
+$majority = find_majority($data);
+echo "Majority: " . $majority;
+
+beginTest( ++$test);
+
+$data = [];
+for ($i = 0; $i < 10; $i++)
+{
+    $data[] = rand(0, 10);
+}
+
+for ($i = 0; $i < count($data); $i++)
+    echo "data[" . $i . "] = " . $data[$i] . "<br />";
+sort($data);
+echo "sorted <br />";
+for ($i = 0; $i < count($data); $i++)
+    echo "data[" . $i . "] = " . $data[$i] . "<br />";
+
+for ($value = 0; $value < 10; $value++)
+{
+    echo find_i_j($data, $value) . "<br />";
 }
