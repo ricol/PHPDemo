@@ -134,7 +134,7 @@ function find_majority($data)
 function find_i_j($data, $value)
 {
     $result = false;
-
+    
     for ($i = count($data) - 1; $i >= 0; $i--)
     {
         for ($j = $i - 1; $j >= 0; $j--)
@@ -145,15 +145,15 @@ function find_i_j($data, $value)
                 break;
             }
         }
-
+        
         if ($result) break;
     }
-
+    
     if ($result)
     {
         echo "Result: data[" . $i . "] - data[" . $j . "] = $value <br />";
     }
-
+    
     return $result ? "YES" : "NO";
 }
 
